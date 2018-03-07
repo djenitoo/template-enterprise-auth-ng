@@ -11,12 +11,15 @@ import { Page } from "tns-core-modules/ui/page"
     templateUrl: "./login.component.html"
 })
 export class LoginComponent {
+    public isLoading: Boolean;
 
     constructor(private _routerExtensions: RouterExtensions, private zone: NgZone, private page: Page) {
+        this.isLoading = false;
         this.page.actionBarHidden = true;
     }
 
-    login() {
+    public login() {
+        this.isLoading = true;
         if (Kinvey.User.getActiveUser() == null) {
             Kinvey.User.loginWithMIC('http://example.com', Kinvey.AuthorizationGrant.AuthorizationCodeLoginPage, { version: 'v2' })
                 .then((user: Kinvey.User) => {
@@ -24,12 +27,17 @@ export class LoginComponent {
                     console.log("user: " + JSON.stringify(user));
                 })
                 .catch((error: Kinvey.BaseError) => {
+                    this.isLoading = false;
                     alert("Error!");
                     console.log("error: " + error);
                 });
         } else {
             this.navigateHome();
         }
+    }
+
+    public getLoginPageVisibility() {
+        return this.isLoading ? 'collapsed' : 'visible';
     }
 
     private navigateHome() {
