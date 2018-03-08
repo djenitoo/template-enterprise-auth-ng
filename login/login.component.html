@@ -5,5 +5,5 @@
     </StackLayout>
     <Button row="1" class="btn btn-primary btn-active btn-margin font-weight-bold t-18" 
         (tap)="login()" text="Log in" [visibility]="getLoginPageVisibility()"></Button>
-    <ActivityIndicator row="0" rowSpan="2" busy="{{ isLoading }}"></ActivityIndicator>
+    <ActivityIndicator class="activity-indicator" row="0" rowSpan="2" busy="{{ isLoading }}"></ActivityIndicator>
 </GridLayout>
