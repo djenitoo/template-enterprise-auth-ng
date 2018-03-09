@@ -1,7 +1,7 @@
-<GridLayout class="page" rows="*, auto">
-    <StackLayout verticalAlignment="middle">
-        <Label class="text-muted t-30" text="Enterprise Auth" horizontalAlignment="center"></Label>
-        <Image class="m-t-20" src="res://lock" stretch="none" horizontalAlignment="center"></Image>
+<GridLayout class="page" rows="*, auto" backgroundImage="res://mesh">
+    <StackLayout verticalAlignment="top">
+        <Label class="m-t-30 t-30 company-name" text="Your Company Name" horizontalAlignment="center"></Label>
+        <Image class="m-t-30" src="res://company_logo" stretch="none" horizontalAlignment="center" verticalAlignment="center"></Image>
     </StackLayout>
 
     <Button row="1" class="btn btn-primary btn-active btn-margin font-weight-bold t-18" (tap)="login()" text="Log in"></Button>

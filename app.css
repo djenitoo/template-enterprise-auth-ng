@@ -13,3 +13,16 @@ refer to http://docs.nativescript.org/ui/theme.
 .btn-margin {
     margin: 0 25 30 25;
 }
+
+.page {
+    background-color: #3C59FD;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+.btn {
+    color: #000000;
+    background-color: #ffffff;
+}
+.company-name{
+    color: #ffffff;
+}
