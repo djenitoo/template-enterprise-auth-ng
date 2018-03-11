@@ -1,8 +1,11 @@
-<GridLayout class="page" rows="*, auto" backgroundImage="res://mesh">
-    <StackLayout verticalAlignment="top">
-        <Label class="m-t-30 t-30 company-name" text="Your Company Name" horizontalAlignment="center"></Label>
-        <Image class="m-t-30" src="res://company_logo" stretch="none" horizontalAlignment="center" verticalAlignment="center"></Image>
+<FlexboxLayout class="page page-login" backgroundImage="res://mesh">
+    <StackLayout verticalAlignment="top" height="30%" class="flexbox-item">
+        <Label class="t-30 company-name" text="Your Company Name"></Label>
     </StackLayout>
+    <Image flexGrow="1" src="res://company_logo" stretch="none"></Image>
+    <StackLayout verticalAlignment="top" horizontalAlignment="center" class="flexbox-item">
+        <Label class="t-18 login-text" text="Log in with your organizational account"></Label>
+        <Button class="btn btn-login btn-rounded-sm font-weight-bold t-18" (tap)="login()" text="Log in"></Button>        
+    </StackLayout>
+</FlexboxLayout>
 
-    <Button row="1" class="btn btn-primary btn-active btn-margin font-weight-bold t-18" (tap)="login()" text="Log in"></Button>
-</GridLayout>
