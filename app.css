@@ -35,6 +35,7 @@ refer to http://docs.nativescript.org/ui/theme.
 .action-bar{
     background-color: #3C59FD;
     color: #ffffff;
+    padding-right: 10;
 }
 .content {
     margin-bottom: 4;
@@ -100,6 +101,5 @@ refer to http://docs.nativescript.org/ui/theme.
 }
 
 .action-button{
-    padding-right: 20; /* TODO: Needed for android only*/
     font-size: 20;
 }
