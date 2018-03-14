@@ -62,9 +62,15 @@ refer to http://docs.nativescript.org/ui/theme.
     flex-direction: column;
     align-items: center;
 }
-
+.company-name-container {
+    height: 30%;
+}
 .company-name{
     margin-top: 60;
+}
+
+.company-logo {
+    flex-grow: 1;
 }
 
 .login-text {
@@ -92,6 +98,8 @@ refer to http://docs.nativescript.org/ui/theme.
 }
 .menu{
     flex-direction: column;
+    flex-grow: 1;
+    orientation: horizontal;
 }
 .menu-item {
     margin-bottom: 20;
