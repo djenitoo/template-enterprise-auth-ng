@@ -28,6 +28,10 @@ refer to http://docs.nativescript.org/ui/theme.
     margin: 20 0 30 0;
 }
 
+.btn:highlighted {
+    background-color: #2241F0;
+}
+
 .flexbox-item {
     width: 95%;
     text-align: center;
@@ -70,6 +74,11 @@ refer to http://docs.nativescript.org/ui/theme.
 .btn-login {
     color: #000000;
     background-color: #ffffff;
+}
+
+.btn-login:highlighted {
+    background-color: #EAEAEA;
+    color: #000000;
 }
 
 /*  Welcome */
