@@ -18,11 +18,7 @@ export class LoginComponent {
         this.page.actionBarHidden = true;
         this.page.backgroundSpanUnderStatusBar = true;
         this.page.className = "page-login-container";
-
-        if(platform.isAndroid) {
-            this.page.statusBarStyle = 'dark';
-            this.page.androidStatusBarBackground = new color.Color("#3C59FD");
-        }
+        this.page.statusBarStyle = "dark";
     }
 
     login() {
