@@ -12,8 +12,7 @@ getPackageJson()
             commandName: "lint",
             command: "tslint \"app/**/*.ts\"",
             message: "Updating package.json scripts for linting..."
-        }),
-        updateFirebaseConfigAppId(packageJsonData)
+        })
     ]))
     .catch((err) => {
         console.error(err);
@@ -74,43 +73,6 @@ function addScriptCommand(packageJsonData, options) {
             }
 
             resolve();
-        });
-    });
-}
-
-function updateFirebaseConfigAppId(packageJsonData) {
-    console.log("Updating google services configuration for firebase...");
-
-    const googleServicesJsonPath = path.join(process.cwd(), "App_Resources", "Android", "google-services.json");
-    const googleServiceInfoPlistPath = path.join(process.cwd(), "App_Resources", "iOS", "GoogleService-Info.plist");
-
-    const packageJson = packageJsonData.packageJson;
-    if (!packageJson.nativescript || !packageJson.nativescript.id) {
-        return Promise.reject(new Error("cannot find nativescript node in package.json file"));
-    }
-
-    return Promise.all([
-        replaceAppId(googleServicesJsonPath, packageJson.nativescript.id),
-        replaceAppId(googleServiceInfoPlistPath, packageJson.nativescript.id)
-    ]);
-}
-
-function replaceAppId(filePath, appId) {
-    return new Promise((resolve, reject) => {
-        fs.readFile(filePath, "utf8", (err, content) => {
-            if (err) {
-                return reject(err);
-            }
-
-            const appIdPlaceholder = "__PACKAGE__";
-            const updatedContent = content.replace(appIdPlaceholder, appId);
-            fs.writeFile(filePath, updatedContent, (err) => {
-                if (err) {
-                    return reject(err);
-                }
-
-                resolve();
-            });
         });
     });
 }
