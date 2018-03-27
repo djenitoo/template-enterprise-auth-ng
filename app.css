@@ -76,6 +76,7 @@ refer to http://docs.nativescript.org/ui/theme.
 
 .login-text {
     margin-top: 60;
+    white-space: normal;
 }
 
 .btn-login {
