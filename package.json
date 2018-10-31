@@ -61,7 +61,7 @@
     "devDependencies": {
         "@nativescript/schematics": "~0.3.0",
         "nativescript-dev-typescript": "~0.7.0",
-        "nativescript-dev-webpack": "~0.16.0",
+        "nativescript-dev-webpack": "~0.17.0",
         "typescript": "~2.7.2"
     }
 }
